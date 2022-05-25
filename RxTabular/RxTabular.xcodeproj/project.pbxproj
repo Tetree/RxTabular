@@ -14,6 +14,16 @@
 		A4AE08C5283ED05500D5FB30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4AE08C3283ED05500D5FB30 /* Main.storyboard */; };
 		A4AE08C7283ED05A00D5FB30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4AE08C6283ED05A00D5FB30 /* Assets.xcassets */; };
 		A4AE08CA283ED05A00D5FB30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4AE08C8283ED05A00D5FB30 /* LaunchScreen.storyboard */; };
+		A4AE08D7283ED8D100D5FB30 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AE08D6283ED8D100D5FB30 /* SplashViewController.swift */; };
+		A4AE08DA283ED93400D5FB30 /* loadingFiles.json in Resources */ = {isa = PBXBuildFile; fileRef = A4AE08D9283ED93400D5FB30 /* loadingFiles.json */; };
+		A4AE08DD283ED97F00D5FB30 /* ApplicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AE08DC283ED97F00D5FB30 /* ApplicationManager.swift */; };
+		A4AE08E0283ED9AC00D5FB30 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AE08DF283ED9AC00D5FB30 /* Constants.swift */; };
+		A4AE08E2283ED9FD00D5FB30 /* PostalDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AE08E1283ED9FD00D5FB30 /* PostalDTO.swift */; };
+		A4AE08E4283EDA3700D5FB30 /* PostalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AE08E3283EDA3700D5FB30 /* PostalModel.swift */; };
+		A4AE08E8283EDAA900D5FB30 /* PostalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AE08E6283EDAA900D5FB30 /* PostalTableViewCell.swift */; };
+		A4AE08E9283EDAA900D5FB30 /* PostalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4AE08E7283EDAA900D5FB30 /* PostalTableViewCell.xib */; };
+		A4AE08EC283EDAFC00D5FB30 /* PostalCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AE08EB283EDAFC00D5FB30 /* PostalCellViewModel.swift */; };
+		A4AE08EE283EDC0E00D5FB30 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AE08ED283EDC0E00D5FB30 /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +36,16 @@
 		A4AE08C6283ED05A00D5FB30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4AE08C9283ED05A00D5FB30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4AE08CB283ED05A00D5FB30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4AE08D6283ED8D100D5FB30 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		A4AE08D9283ED93400D5FB30 /* loadingFiles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadingFiles.json; sourceTree = "<group>"; };
+		A4AE08DC283ED97F00D5FB30 /* ApplicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationManager.swift; sourceTree = "<group>"; };
+		A4AE08DF283ED9AC00D5FB30 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A4AE08E1283ED9FD00D5FB30 /* PostalDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalDTO.swift; sourceTree = "<group>"; };
+		A4AE08E3283EDA3700D5FB30 /* PostalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalModel.swift; sourceTree = "<group>"; };
+		A4AE08E6283EDAA900D5FB30 /* PostalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalTableViewCell.swift; sourceTree = "<group>"; };
+		A4AE08E7283EDAA900D5FB30 /* PostalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostalTableViewCell.xib; sourceTree = "<group>"; };
+		A4AE08EB283EDAFC00D5FB30 /* PostalCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostalCellViewModel.swift; sourceTree = "<group>"; };
+		A4AE08ED283EDC0E00D5FB30 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		B83F84DE8550B76B9C4E1821 /* Pods-RxTabular.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTabular.release.xcconfig"; path = "Target Support Files/Pods-RxTabular/Pods-RxTabular.release.xcconfig"; sourceTree = "<group>"; };
 		EDEEC437A94AF426B937C4B4 /* Pods_RxTabular.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxTabular.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -80,6 +100,11 @@
 		A4AE08BC283ED05500D5FB30 /* RxTabular */ = {
 			isa = PBXGroup;
 			children = (
+				A4AE08EA283EDAE900D5FB30 /* ViewModels */,
+				A4AE08E5283EDA9300D5FB30 /* Views */,
+				A4AE08DE283ED9A200D5FB30 /* Constants */,
+				A4AE08DB283ED96E00D5FB30 /* Managers */,
+				A4AE08D8283ED90D00D5FB30 /* Animations */,
 				A4AE08D5283ED57A00D5FB30 /* App Delegate */,
 				A4AE08D3283ED54D00D5FB30 /* Supporting Files */,
 				A4AE08D4283ED55400D5FB30 /* Storyboards */,
@@ -93,6 +118,8 @@
 		A4AE08D1283ED54400D5FB30 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A4AE08E1283ED9FD00D5FB30 /* PostalDTO.swift */,
+				A4AE08E3283EDA3700D5FB30 /* PostalModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -101,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				A4AE08C1283ED05500D5FB30 /* MainViewController.swift */,
+				A4AE08D6283ED8D100D5FB30 /* SplashViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -129,6 +157,48 @@
 				A4AE08BF283ED05500D5FB30 /* SceneDelegate.swift */,
 			);
 			path = "App Delegate";
+			sourceTree = "<group>";
+		};
+		A4AE08D8283ED90D00D5FB30 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				A4AE08D9283ED93400D5FB30 /* loadingFiles.json */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		A4AE08DB283ED96E00D5FB30 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A4AE08DC283ED97F00D5FB30 /* ApplicationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		A4AE08DE283ED9A200D5FB30 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				A4AE08DF283ED9AC00D5FB30 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		A4AE08E5283EDA9300D5FB30 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A4AE08E6283EDAA900D5FB30 /* PostalTableViewCell.swift */,
+				A4AE08E7283EDAA900D5FB30 /* PostalTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A4AE08EA283EDAE900D5FB30 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A4AE08EB283EDAFC00D5FB30 /* PostalCellViewModel.swift */,
+				A4AE08ED283EDC0E00D5FB30 /* MainViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +263,8 @@
 			files = (
 				A4AE08CA283ED05A00D5FB30 /* LaunchScreen.storyboard in Resources */,
 				A4AE08C7283ED05A00D5FB30 /* Assets.xcassets in Resources */,
+				A4AE08E9283EDAA900D5FB30 /* PostalTableViewCell.xib in Resources */,
+				A4AE08DA283ED93400D5FB30 /* loadingFiles.json in Resources */,
 				A4AE08C5283ED05500D5FB30 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,9 +318,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4AE08E4283EDA3700D5FB30 /* PostalModel.swift in Sources */,
 				A4AE08C2283ED05500D5FB30 /* MainViewController.swift in Sources */,
+				A4AE08E2283ED9FD00D5FB30 /* PostalDTO.swift in Sources */,
+				A4AE08EC283EDAFC00D5FB30 /* PostalCellViewModel.swift in Sources */,
 				A4AE08BE283ED05500D5FB30 /* AppDelegate.swift in Sources */,
+				A4AE08DD283ED97F00D5FB30 /* ApplicationManager.swift in Sources */,
 				A4AE08C0283ED05500D5FB30 /* SceneDelegate.swift in Sources */,
+				A4AE08D7283ED8D100D5FB30 /* SplashViewController.swift in Sources */,
+				A4AE08E8283EDAA900D5FB30 /* PostalTableViewCell.swift in Sources */,
+				A4AE08E0283ED9AC00D5FB30 /* Constants.swift in Sources */,
+				A4AE08EE283EDC0E00D5FB30 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
