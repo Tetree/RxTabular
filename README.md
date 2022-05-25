@@ -5,8 +5,9 @@ Short test of Tabular data with Realm and RxSwift
 Software dependencies:
 
 Project requires following pods
-https://cocoapods.org/pods/RealmSwift
- and lottie-ios for the animation.
+- https://cocoapods.org/pods/RealmSwift
+- https://cocoapods.org/pods/RxSwift
+- https://cocoapods.org/pods/lottie-ios
 
 # Build and Test
 The project includes external dependencies added through cocoapods which are *not* included in the source control so project 
