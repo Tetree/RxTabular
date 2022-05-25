@@ -7,23 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A0202320C67A78120CA077F /* Pods_RxTabular.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDEEC437A94AF426B937C4B4 /* Pods_RxTabular.framework */; };
 		A4AE08BE283ED05500D5FB30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AE08BD283ED05500D5FB30 /* AppDelegate.swift */; };
 		A4AE08C0283ED05500D5FB30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AE08BF283ED05500D5FB30 /* SceneDelegate.swift */; };
-		A4AE08C2283ED05500D5FB30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AE08C1283ED05500D5FB30 /* ViewController.swift */; };
+		A4AE08C2283ED05500D5FB30 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AE08C1283ED05500D5FB30 /* MainViewController.swift */; };
 		A4AE08C5283ED05500D5FB30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4AE08C3283ED05500D5FB30 /* Main.storyboard */; };
 		A4AE08C7283ED05A00D5FB30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4AE08C6283ED05A00D5FB30 /* Assets.xcassets */; };
 		A4AE08CA283ED05A00D5FB30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4AE08C8283ED05A00D5FB30 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0FF77FA4150E4BBC27C4630A /* Pods-RxTabular.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTabular.debug.xcconfig"; path = "Target Support Files/Pods-RxTabular/Pods-RxTabular.debug.xcconfig"; sourceTree = "<group>"; };
 		A4AE08BA283ED05500D5FB30 /* RxTabular.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxTabular.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4AE08BD283ED05500D5FB30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4AE08BF283ED05500D5FB30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A4AE08C1283ED05500D5FB30 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A4AE08C1283ED05500D5FB30 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A4AE08C4283ED05500D5FB30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A4AE08C6283ED05A00D5FB30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4AE08C9283ED05A00D5FB30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A4AE08CB283ED05A00D5FB30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B83F84DE8550B76B9C4E1821 /* Pods-RxTabular.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTabular.release.xcconfig"; path = "Target Support Files/Pods-RxTabular/Pods-RxTabular.release.xcconfig"; sourceTree = "<group>"; };
+		EDEEC437A94AF426B937C4B4 /* Pods_RxTabular.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxTabular.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A0202320C67A78120CA077F /* Pods_RxTabular.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B82D011FE8999A7A029B973 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EDEEC437A94AF426B937C4B4 /* Pods_RxTabular.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		87701D6A15815142EA1E219F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0FF77FA4150E4BBC27C4630A /* Pods-RxTabular.debug.xcconfig */,
+				B83F84DE8550B76B9C4E1821 /* Pods-RxTabular.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A4AE08B1283ED05500D5FB30 = {
 			isa = PBXGroup;
 			children = (
 				A4AE08BC283ED05500D5FB30 /* RxTabular */,
 				A4AE08BB283ED05500D5FB30 /* Products */,
+				87701D6A15815142EA1E219F /* Pods */,
+				2B82D011FE8999A7A029B973 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +80,55 @@
 		A4AE08BC283ED05500D5FB30 /* RxTabular */ = {
 			isa = PBXGroup;
 			children = (
-				A4AE08BD283ED05500D5FB30 /* AppDelegate.swift */,
-				A4AE08BF283ED05500D5FB30 /* SceneDelegate.swift */,
-				A4AE08C1283ED05500D5FB30 /* ViewController.swift */,
-				A4AE08C3283ED05500D5FB30 /* Main.storyboard */,
+				A4AE08D5283ED57A00D5FB30 /* App Delegate */,
+				A4AE08D3283ED54D00D5FB30 /* Supporting Files */,
+				A4AE08D4283ED55400D5FB30 /* Storyboards */,
+				A4AE08D2283ED54800D5FB30 /* Controllers */,
+				A4AE08D1283ED54400D5FB30 /* Models */,
 				A4AE08C6283ED05A00D5FB30 /* Assets.xcassets */,
-				A4AE08C8283ED05A00D5FB30 /* LaunchScreen.storyboard */,
-				A4AE08CB283ED05A00D5FB30 /* Info.plist */,
 			);
 			path = RxTabular;
+			sourceTree = "<group>";
+		};
+		A4AE08D1283ED54400D5FB30 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A4AE08D2283ED54800D5FB30 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A4AE08C1283ED05500D5FB30 /* MainViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A4AE08D3283ED54D00D5FB30 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A4AE08CB283ED05A00D5FB30 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A4AE08D4283ED55400D5FB30 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A4AE08C3283ED05500D5FB30 /* Main.storyboard */,
+				A4AE08C8283ED05A00D5FB30 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		A4AE08D5283ED57A00D5FB30 /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				A4AE08BD283ED05500D5FB30 /* AppDelegate.swift */,
+				A4AE08BF283ED05500D5FB30 /* SceneDelegate.swift */,
+			);
+			path = "App Delegate";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +138,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A4AE08CE283ED05A00D5FB30 /* Build configuration list for PBXNativeTarget "RxTabular" */;
 			buildPhases = (
+				CA263884BB4250331B75A9AE /* [CP] Check Pods Manifest.lock */,
 				A4AE08B6283ED05500D5FB30 /* Sources */,
 				A4AE08B7283ED05500D5FB30 /* Frameworks */,
 				A4AE08B8283ED05500D5FB30 /* Resources */,
+				21207609823EB161BA6F70BD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,12 +199,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		21207609823EB161BA6F70BD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RxTabular/Pods-RxTabular-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RxTabular/Pods-RxTabular-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxTabular/Pods-RxTabular-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA263884BB4250331B75A9AE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RxTabular-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A4AE08B6283ED05500D5FB30 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4AE08C2283ED05500D5FB30 /* ViewController.swift in Sources */,
+				A4AE08C2283ED05500D5FB30 /* MainViewController.swift in Sources */,
 				A4AE08BE283ED05500D5FB30 /* AppDelegate.swift in Sources */,
 				A4AE08C0283ED05500D5FB30 /* SceneDelegate.swift in Sources */,
 			);
@@ -282,13 +390,14 @@
 		};
 		A4AE08CF283ED05A00D5FB30 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FF77FA4150E4BBC27C4630A /* Pods-RxTabular.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RxTabular/Info.plist;
+				INFOPLIST_FILE = "RxTabular/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -309,13 +418,14 @@
 		};
 		A4AE08D0283ED05A00D5FB30 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B83F84DE8550B76B9C4E1821 /* Pods-RxTabular.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RxTabular/Info.plist;
+				INFOPLIST_FILE = "RxTabular/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
