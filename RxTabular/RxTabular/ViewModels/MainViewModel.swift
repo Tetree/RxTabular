@@ -13,6 +13,7 @@ import RealmSwift
 
 final class MainViewModel {
     
+    private let repositoryService:RepositoryServiceable
     private let pageSize = 30
     private var disposeBag = DisposeBag()
     private(set) var postalCodes = BehaviorRelay<[PostalModel]>(value: [])
@@ -22,7 +23,8 @@ final class MainViewModel {
     /// boolean flag to prevent multiple requests in a row when scrolling to next page
     private(set) var isLoading = BehaviorRelay<Bool>(value: false)
     
-    init(searchDriver: Driver<String>) {
+    init(repositoryService:RepositoryServiceable, searchDriver: Driver<String>) {
+        self.repositoryService = repositoryService
         self.searchDriver = searchDriver
         
         self.searchDriver
@@ -37,62 +39,12 @@ final class MainViewModel {
     //MARK: - Content Functions
     func getContent(reset: Bool, searchText: String? = nil) {
         isLoading.accept(true)
-        if let query = searchText, !query.isEmpty {
-            getContentWithFilters(reset: reset, searchText: query)
-        }else {
-            getContentForNoFilters(reset: reset)
-        }
-        
-    }
-    
-    /// Get content from local database (Realm) without any search queries
-    private func getContentForNoFilters(reset: Bool) {
-        DispatchQueue.global(qos: .background).async { [weak self] in
-            guard let self = self else { return }
-            do {
-                let realm = try Realm()
-                let filteredResults = realm.objects(PostalDTO.self)
-                    
-                self.updateContentForNewResults(reset: reset, results: filteredResults)
-            } catch {
-                debugPrint("getContentForNoFilters failed with error: \(error.localizedDescription)")
-                self.isLoading.accept(false)
-            }
-            
-        }
-    }
-    
-    /// Get content from local database (Realm) with search queries
-    private func getContentWithFilters(reset: Bool, searchText: String) {
-        DispatchQueue.global(qos: .background).async { [weak self] in
-            guard let self = self else { return }
-            do {
-                
-                /// break search query into components
-                let searchTerms = searchText.split(separator: " ")
-                let realm = try Realm()
-                
-                /// create the query parameters
-                /// we check if the "postal" property of the PostalDTO object contains each of the search terms
-                /// typed by the user with diacritic insensitivity so Realm treats special characters as the base character (e.g. é -> e).
-                var predicates = [NSPredicate]()
-                for term in searchTerms {
-                    let predicate = NSPredicate.init(format: "postal CONTAINS[cd] %@", term as NSString)
-                    
-                    predicates.append(predicate)
-                }
-                
-                /// set the query parameters
-                let query = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: predicates)
-                
-                let filteredResults = realm.objects(PostalDTO.self)
-                    .filter(query)
-                
-                self.updateContentForNewResults(reset: reset, results: filteredResults)
-                
-            } catch {
-                debugPrint("getContentWithFilters failed with error: \(error.localizedDescription)")
-                self.isLoading.accept(false)
+        repositoryService.getContent(reset: reset, searchText: searchText) { [weak self] result in
+            switch result {
+            case .success(let results):
+                self?.updateContentForNewResults(reset: reset, results: results)
+            case .failure(let error):
+                print("Failed with error: \(error.localizedDescription)")
             }
         }
     }

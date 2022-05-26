@@ -66,7 +66,7 @@ class MainViewController: UIViewController {
             .orEmpty
             .asDriver()
         
-        viewmodel = MainViewModel(searchDriver: searchDriver)
+        viewmodel = MainViewModel(repositoryService: Resolver.shared.resolve(), searchDriver: searchDriver)
         /// To be able to set tableView row height
         tableView.rx
             .setDelegate(self)

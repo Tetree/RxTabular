@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		7A0202320C67A78120CA077F /* Pods_RxTabular.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDEEC437A94AF426B937C4B4 /* Pods_RxTabular.framework */; };
+		A47E9A39283F845600823CD0 /* RepositoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E9A38283F845600823CD0 /* RepositoryService.swift */; };
+		A47E9A3E283F847700823CD0 /* Injectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E9A3D283F847700823CD0 /* Injectable.swift */; };
+		A47E9A42283F84B900823CD0 /* DependencyObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E9A41283F84B900823CD0 /* DependencyObject.swift */; };
+		A47E9A44283F853200823CD0 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E9A43283F853200823CD0 /* Resolver.swift */; };
+		A47E9A46283F888200823CD0 /* Injected.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E9A45283F888200823CD0 /* Injected.swift */; };
+		A47E9A49283F892200823CD0 /* RepositoryServiceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47E9A48283F892200823CD0 /* RepositoryServiceable.swift */; };
 		A4AE08BE283ED05500D5FB30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AE08BD283ED05500D5FB30 /* AppDelegate.swift */; };
 		A4AE08C0283ED05500D5FB30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AE08BF283ED05500D5FB30 /* SceneDelegate.swift */; };
 		A4AE08C2283ED05500D5FB30 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4AE08C1283ED05500D5FB30 /* MainViewController.swift */; };
@@ -28,6 +34,12 @@
 
 /* Begin PBXFileReference section */
 		0FF77FA4150E4BBC27C4630A /* Pods-RxTabular.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTabular.debug.xcconfig"; path = "Target Support Files/Pods-RxTabular/Pods-RxTabular.debug.xcconfig"; sourceTree = "<group>"; };
+		A47E9A38283F845600823CD0 /* RepositoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryService.swift; sourceTree = "<group>"; };
+		A47E9A3D283F847700823CD0 /* Injectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injectable.swift; sourceTree = "<group>"; };
+		A47E9A41283F84B900823CD0 /* DependencyObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyObject.swift; sourceTree = "<group>"; };
+		A47E9A43283F853200823CD0 /* Resolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
+		A47E9A45283F888200823CD0 /* Injected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injected.swift; sourceTree = "<group>"; };
+		A47E9A48283F892200823CD0 /* RepositoryServiceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryServiceable.swift; sourceTree = "<group>"; };
 		A4AE08BA283ED05500D5FB30 /* RxTabular.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxTabular.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4AE08BD283ED05500D5FB30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4AE08BF283ED05500D5FB30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +91,65 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A47E9A37283F844400823CD0 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				A47E9A38283F845600823CD0 /* RepositoryService.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		A47E9A3A283F845A00823CD0 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				A47E9A40283F849F00823CD0 /* Resolver */,
+				A47E9A3F283F849500823CD0 /* Models */,
+				A47E9A3C283F846800823CD0 /* PropertyWrappers */,
+				A47E9A3B283F846200823CD0 /* Protocols */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		A47E9A3B283F846200823CD0 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A47E9A3D283F847700823CD0 /* Injectable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A47E9A3C283F846800823CD0 /* PropertyWrappers */ = {
+			isa = PBXGroup;
+			children = (
+				A47E9A45283F888200823CD0 /* Injected.swift */,
+			);
+			path = PropertyWrappers;
+			sourceTree = "<group>";
+		};
+		A47E9A3F283F849500823CD0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A47E9A41283F84B900823CD0 /* DependencyObject.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A47E9A40283F849F00823CD0 /* Resolver */ = {
+			isa = PBXGroup;
+			children = (
+				A47E9A43283F853200823CD0 /* Resolver.swift */,
+			);
+			path = Resolver;
+			sourceTree = "<group>";
+		};
+		A47E9A47283F890900823CD0 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A47E9A48283F892200823CD0 /* RepositoryServiceable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		A4AE08B1283ED05500D5FB30 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +171,9 @@
 		A4AE08BC283ED05500D5FB30 /* RxTabular */ = {
 			isa = PBXGroup;
 			children = (
+				A47E9A47283F890900823CD0 /* Protocols */,
+				A47E9A3A283F845A00823CD0 /* DI */,
+				A47E9A37283F844400823CD0 /* Repository */,
 				A4AE08EA283EDAE900D5FB30 /* ViewModels */,
 				A4AE08E5283EDA9300D5FB30 /* Views */,
 				A4AE08DE283ED9A200D5FB30 /* Constants */,
@@ -318,17 +392,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A47E9A44283F853200823CD0 /* Resolver.swift in Sources */,
 				A4AE08E4283EDA3700D5FB30 /* PostalModel.swift in Sources */,
 				A4AE08C2283ED05500D5FB30 /* MainViewController.swift in Sources */,
 				A4AE08E2283ED9FD00D5FB30 /* PostalDTO.swift in Sources */,
+				A47E9A39283F845600823CD0 /* RepositoryService.swift in Sources */,
 				A4AE08EC283EDAFC00D5FB30 /* PostalCellViewModel.swift in Sources */,
 				A4AE08BE283ED05500D5FB30 /* AppDelegate.swift in Sources */,
+				A47E9A49283F892200823CD0 /* RepositoryServiceable.swift in Sources */,
 				A4AE08DD283ED97F00D5FB30 /* ApplicationManager.swift in Sources */,
+				A47E9A3E283F847700823CD0 /* Injectable.swift in Sources */,
 				A4AE08C0283ED05500D5FB30 /* SceneDelegate.swift in Sources */,
 				A4AE08D7283ED8D100D5FB30 /* SplashViewController.swift in Sources */,
 				A4AE08E8283EDAA900D5FB30 /* PostalTableViewCell.swift in Sources */,
 				A4AE08E0283ED9AC00D5FB30 /* Constants.swift in Sources */,
 				A4AE08EE283EDC0E00D5FB30 /* MainViewModel.swift in Sources */,
+				A47E9A42283F84B900823CD0 /* DependencyObject.swift in Sources */,
+				A47E9A46283F888200823CD0 /* Injected.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
