@@ -7,13 +7,9 @@
 
 import Foundation
 
-final class PostalCellViewModel {
+struct PostalCellViewModel {
     
     let model:PostalModel
-    
-    init(model: PostalModel) {
-        self.model = model
-    }
     
     var getPostalCode:String { "\(model.postalNumber)-\(model.postalExtension)" }
     var getPostalDesignation:String { "\(model.postalDesignation)" }
