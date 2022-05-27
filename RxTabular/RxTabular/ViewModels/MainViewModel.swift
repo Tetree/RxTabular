@@ -16,16 +16,30 @@ final class MainViewModel {
     private let repositoryService:RepositoryServiceable
     private let pageSize = 30
     private var disposeBag = DisposeBag()
-    private(set) var postalCodes = BehaviorRelay<[PostalModel]>(value: [])
+    private let postalCodes = BehaviorRelay<[PostalModel]>(value: [])
+    
+    var postalObserver:Observable<[PostalModel]> {
+        postalCodes.asObservable()
+    }
     
     private let searchDriver:Driver<String>
+    private let scrollOffsetDriver:Driver<CGPoint>
     
     /// boolean flag to prevent multiple requests in a row when scrolling to next page
-    private(set) var isLoading = BehaviorRelay<Bool>(value: false)
+    private let isLoading = BehaviorRelay<Bool>(value: false)
     
-    init(repositoryService:RepositoryServiceable, searchDriver: Driver<String>) {
+    var isLoadingObservable:Observable<Bool> {
+        isLoading.asObservable()
+    }
+    
+    var tableviewDidScrollToBottom: ((CGPoint) -> (Bool, String?))?
+    
+    init(repositoryService:RepositoryServiceable, searchDriver: Driver<String>,
+         scrollOffsetDriver: Driver<CGPoint>) {
+        
         self.repositoryService = repositoryService
         self.searchDriver = searchDriver
+        self.scrollOffsetDriver = scrollOffsetDriver
         
         self.searchDriver
             .throttle(.seconds(1))
@@ -34,10 +48,27 @@ final class MainViewModel {
                 self?.getContent(reset: true, searchText: query)
             }
             .disposed(by: disposeBag)
+        
+        self.scrollOffsetDriver
+            .skip(1)
+            .throttle(.seconds(1))
+            .drive(onNext: { [weak self] offset in
+                guard let self = self else { return }
+
+                let canFetchNextContentResult = self.tableviewDidScrollToBottom?(offset)
+ 
+                guard canFetchNextContentResult?.0 == true else { return }
+                self.getContent(reset: false, searchText: canFetchNextContentResult?.1)
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    func start() {
+        getContent(reset: true)
     }
     
     //MARK: - Content Functions
-    func getContent(reset: Bool, searchText: String? = nil) {
+    private func getContent(reset: Bool, searchText: String? = nil) {
         isLoading.accept(true)
         repositoryService.getContent(reset: reset, searchText: searchText) { [weak self] result in
             switch result {

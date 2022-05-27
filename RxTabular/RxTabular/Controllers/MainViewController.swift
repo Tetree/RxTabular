@@ -61,39 +61,38 @@ class MainViewController: UIViewController {
     //MARK: - Setup Functions
     private func setupView() {
         /// Bind Search bar to update contents as user types
-        let searchDriver = searchBar.rx
+        let searchDriver = searchBar
+            .rx
             .text
             .orEmpty
             .asDriver()
         
-        viewmodel = MainViewModel(repositoryService: Resolver.shared.resolve(), searchDriver: searchDriver)
+        /// Search next page of content when tableview is scrolled to the bottom
+        let contentOffsetDriver = tableView.rx
+            .contentOffset
+            .asDriver()
+        
+        viewmodel = MainViewModel(repositoryService: Resolver.shared.resolve(), searchDriver: searchDriver, scrollOffsetDriver: contentOffsetDriver)
+        
+        viewmodel.tableviewDidScrollToBottom = { [weak self] offset in
+            guard let self = self else { return (false, nil) }
+
+            let offsetY = offset.y
+            let contentHeight = self.tableView.contentSize.height
+            let tableViewFrameHeight = self.tableView.frame.height
+            
+            guard offsetY > contentHeight - tableViewFrameHeight else { return (false, nil) }
+            return (true, self.searchBar.text)
+        }
+        
         /// To be able to set tableView row height
         tableView.rx
             .setDelegate(self)
             .disposed(by: disposeBag)
         
-        /// Search next page of content when tableview is scrolled to the bottom
-        tableView.rx
-            .contentOffset
-            .asDriver()
-            .skip(1)
-            .throttle(.seconds(1))
-            .drive(onNext: { [weak self] offset in
-                guard let self = self else { return }
-
-                let offsetY = offset.y
-                let contentHeight = self.tableView.contentSize.height
-                let tableViewFrameHeight = self.tableView.frame.height
-                
-                guard offsetY > contentHeight - tableViewFrameHeight else { return }
-                self.viewmodel.getContent(reset: false, searchText: self.searchBar.text)
-            })
-            .disposed(by: disposeBag)
-        
         /// Bind postal codes to the tableView
         viewmodel
-            .postalCodes
-            .asObservable()
+            .postalObserver
             .bind(to: tableView.rx.items(cellIdentifier: PostalTableViewCell.identifier, cellType: PostalTableViewCell.self)) { [weak self] index, postalModel, cell in
             
                 guard let self = self else { return }
@@ -104,16 +103,32 @@ class MainViewController: UIViewController {
         
         
         viewmodel
-            .isLoading
-            .asObservable()
-            .bind { [weak self] animate in
-            DispatchQueue.main.async {
-                self?.activityIndicator.isHidden = !animate
+                .isLoadingObservable
+                .asObservable()
+                .bind { [weak self] animate in
+                DispatchQueue.main.async {
+                    self?.activityIndicator.isHidden = !animate
+                }
             }
-        }
-        .disposed(by: disposeBag)
+            .disposed(by: disposeBag)
         
-        viewmodel.getContent(reset: true)
+        searchBar
+            .rx
+            .searchButtonClicked
+            .asDriver()
+            .drive (onNext: { [weak self] in
+                self?.searchBar.resignFirstResponder()
+            }).disposed(by: disposeBag)
+        
+        searchBar
+            .rx
+            .cancelButtonClicked
+            .asDriver()
+            .drive (onNext: { [weak self] in
+                self?.searchBar.resignFirstResponder()
+            }).disposed(by: disposeBag)
+        
+        viewmodel.start()
         
     }
     
